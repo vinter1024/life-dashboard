@@ -100,3 +100,144 @@ h3 { font-size: 1rem; color: var(--text-secondary); margin: 5px 0 10px 0; }
 .task-item.completed { opacity: 0.5; }
 .task-item.completed span { text-decoration: line-through; }
 .static-list li { padding: 8px 0; font-size: 0.9rem; color: #555; }
+
+/* === 📚 新增书单样式 === */
+.book-col h2 { border-color: #4a90e2; } /* 蓝色标题 */
+
+.book-category {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #4a90e2;
+    background: #f0f7ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* === 📱 Tab 切换模式样式 === */
+
+/* 为了不被底部导航栏挡住内容，给 body 加个底部内边距 */
+body {
+    padding-bottom: 100px; /* 留出底部空间 */
+}
+
+/* 隐藏所有标签页 */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+/* 只显示激活的标签页 */
+.tab-content.active {
+    display: block;
+}
+
+/* 简单的淡入动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === 底部导航栏 === */
+.bottom-nav {
+    position: fixed;
+    bottom: 20px; /* 悬浮在底部上方一点点，更好看 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.nav-icon { font-size: 1.5rem; margin-bottom: 2px; }
+.nav-text { font-size: 0.8rem; font-weight: bold; }
+
+/* 激活状态的按钮 */
+.nav-btn.active {
+    color: #FF9F1C; /* 这里用了你之前设定的早晨主题色 */
+    transform: scale(1.1);
+}
+
+/* 针对原有布局的微调 */
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.column {
+    margin-bottom: 20px; /* 让卡片之间有点间距 */
+}
+
+/* === 📚 书单子标签 (Sub-Tabs) 样式 === */
+
+/* 1. 顶部滑动按钮容器 */
+.book-nav {
+    display: flex;
+    overflow-x: auto; /* 允许横向滚动 */
+    white-space: nowrap; /* 不许换行 */
+    gap: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    
+    /* 隐藏滚动条但保留功能 (兼容写法) */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+.book-nav::-webkit-scrollbar { display: none; }
+
+/* 2. 每一个分类按钮 */
+.book-nav-btn {
+    padding: 6px 15px;
+    border-radius: 20px;
+    background: #f0f7ff; /* 浅蓝底色 */
+    color: #4a90e2;      /* 蓝字 */
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0; /* 防止按钮被挤扁 */
+}
+
+/* 3. 选中状态的按钮 */
+.book-nav-btn.active {
+    background: #4a90e2;
+    color: white;
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+    transform: scale(1.05);
+}
+
+/* 4. 书单内容切换 */
+.book-page {
+    display: none; /* 默认隐藏 */
+    animation: fadeIn 0.3s ease;
+}
+.book-page.active {
+    display: block; /* 选中时显示 */
+}
+
+/* 优化一下书单里每一项的间距 */
+.book-page .task-item {
+    padding: 10px 0; /*稍微宽一点，方便手指点*/
+}
