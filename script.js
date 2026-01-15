@@ -33,7 +33,7 @@ const taskConfig = [
     { id: 'd_interest', text: '✍🏻 兴趣学习/书法练习', type: 'daily', period: 'evening' },
     { id: 'd_skin', text: '🧖‍♀️ 洗澡或泡脚', type: 'daily', period: 'evening' },
     { id: 'd_RIPC', text: 'RIPC疗法', type: 'daily', period: 'evening' },
-    { id: 'd_meds3', text: '温水 💊 镁片', type: 'daily', period: 'morning' },
+    { id: 'd_meds3', text: '温水 💊 镁片', type: 'daily', period: 'evening' },
     { id: 'd_door', text: '🔒 门窗检查', type: 'daily', period: 'evening' },
 
     // === 每周任务 (周一重置) ===
