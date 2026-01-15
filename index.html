@@ -20,43 +20,68 @@
         <div class="date-display" id="currentDate"></div>
     </header>
 
-    <div class="container">
-        <section class="column daily-col">
-            <h2>☀️ 每日循环</h2>
-            
-            <div id="block-morning" class="time-block">
-                <h3>🌅 早晨 (Morning)</h3>
-                <ul id="list-morning" class="task-list"></ul>
-            </div>
+    <div class="main-container">
+        
+        <div id="tab-today" class="tab-content active">
+            <section class="column daily-col">
+                <div id="block-morning" class="time-block">
+                    <h3>🌅 早晨 (Morning)</h3>
+                    <ul id="list-morning" class="task-list"></ul>
+                </div>
+                <div id="block-daytime" class="time-block">
+                    <h3>💻 日间 (Daytime)</h3>
+                    <ul id="list-daytime" class="task-list"></ul>
+                </div>
+                <div id="block-evening" class="time-block">
+                    <h3>🌙 晚间 (Evening)</h3>
+                    <ul id="list-evening" class="task-list"></ul>
+                </div>
+            </section>
+        </div>
 
-            <div id="block-daytime" class="time-block">
-                <h3>💻 日间 (Daytime)</h3>
-                <ul id="list-daytime" class="task-list"></ul>
-            </div>
+        <div id="tab-plan" class="tab-content">
+            <section class="column weekly-col">
+                <h2>📅 每周任务</h2>
+                <p class="sub-text">每周一重置</p>
+                <ul id="list-weekly" class="task-list"></ul>
+            </section>
 
-            <div id="block-evening" class="time-block">
-                <h3>🌙 晚间 (Evening)</h3>
-                <ul id="list-evening" class="task-list"></ul>
-            </div>
-        </section>
+            <section class="column cycle-col">
+                <h2>⏳ 周期 & 目标</h2>
+                <p class="sub-text">到期自动提醒</p>
+                <ul id="list-cycle" class="task-list"></ul>
+                
+                <div class="long-term-area">
+                    <h3>🎯 年度目标</h3>
+                    <ul id="list-yearly" class="static-list"></ul>
+                </div>
+            </section>
+        </div>
 
-        <section class="column weekly-col">
-            <h2>📅 每周任务</h2>
-            <p class="sub-text">每周一重置</p>
-            <ul id="list-weekly" class="task-list"></ul>
-        </section>
+        <div id="tab-library" class="tab-content">
+            <section class="column book-col">
+                <h2>📚 阅读书单</h2>
+                <p class="sub-text">点击记录思维轨迹</p>
+                <div id="book-container"></div>
+            </section>
+        </div>
 
-        <section class="column cycle-col">
-            <h2>⏳ 周期 & 目标</h2>
-            <p class="sub-text">到期自动提醒</p>
-            <ul id="list-cycle" class="task-list"></ul>
-            
-            <div class="long-term-area">
-                <h3>🎯 年度目标</h3>
-                <ul id="list-yearly" class="static-list"></ul>
-            </div>
-        </section>
     </div>
+
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="switchTab('today')">
+            <span class="nav-icon">☀️</span>
+            <span class="nav-text">今日</span>
+        </button>
+        <button class="nav-btn" onclick="switchTab('plan')">
+            <span class="nav-icon">📅</span>
+            <span class="nav-text">规划</span>
+        </button>
+        <button class="nav-btn" onclick="switchTab('library')">
+            <span class="nav-icon">📚</span>
+            <span class="nav-text">书房</span>
+        </button>
+    </nav>
 
     <script src="script.js"></script>
 </body>
