@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>我的生活仪表盘</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+    <header>
+        <h1 id="greeting">Life Dashboard</h1>
+        <div class="date-display" id="currentDate"></div>
+    </header>
+
+    <div class="container">
+        <section class="column daily-col">
+            <h2>☀️ 每日循环</h2>
+            
+            <div id="block-morning" class="time-block">
+                <h3>🌅 早晨 (Morning)</h3>
+                <ul id="list-morning" class="task-list"></ul>
+            </div>
+
+            <div id="block-daytime" class="time-block">
+                <h3>💻 日间 (Daytime)</h3>
+                <ul id="list-daytime" class="task-list"></ul>
+            </div>
+
+            <div id="block-evening" class="time-block">
+                <h3>🌙 晚间 (Evening)</h3>
+                <ul id="list-evening" class="task-list"></ul>
+            </div>
+        </section>
+
+        <section class="column weekly-col">
+            <h2>📅 每周任务</h2>
+            <p class="sub-text">每周一重置</p>
+            <ul id="list-weekly" class="task-list"></ul>
+        </section>
+
+        <section class="column cycle-col">
+            <h2>⏳ 周期 & 目标</h2>
+            <p class="sub-text">到期自动提醒</p>
+            <ul id="list-cycle" class="task-list"></ul>
+            
+            <div class="long-term-area">
+                <h3>🎯 年度目标</h3>
+                <ul id="list-yearly" class="static-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
